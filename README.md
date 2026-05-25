@@ -1,5 +1,5 @@
 ### EX7 Implementation of Link Analysis using HITS Algorithm
-### DATE: 
+### DATE: 25/5/2026
 ### AIM: To implement Link Analysis using HITS Algorithm in Python.
 ### Description:
 <div align = "justify">
@@ -44,16 +44,16 @@ def hits_algorithm(adjacency_matrix, max_iterations=100, tol=1.0e-6):
     
     for i in range(max_iterations):
         # Authority update
-
-             /*WRITE YOUR CODE HERE
+        new_authority_scores = np.dot(adjacency_matrix.T, hub_scores)
+        new_authority_scores /= np.linalg.norm(new_authority_scores, ord=2)  # Normalizing
         
         # Hub update
-
-             /*WRITE YOUR CODE HERE
+        new_hub_scores = np.dot(adjacency_matrix, new_authority_scores)
+        new_hub_scores /= np.linalg.norm(new_hub_scores, ord=2)  # Normalizing
         
         # Check convergence
-
-             /*WRITE YOUR CODE HERE
+        authority_diff = np.linalg.norm(new_authority_scores - authority_scores, ord=2)
+        hub_diff = np.linalg.norm(new_hub_scores - hub_scores, ord=2)
         
         if authority_diff < tol and hub_diff < tol:
             break
@@ -93,5 +93,10 @@ plt.show()
 ```
 
 ### Output:
+<img width="638" height="108" alt="image" src="https://github.com/user-attachments/assets/9c394e21-ed68-4993-a1d3-1756065e30a7" />
+
+<img width="992" height="742" alt="image" src="https://github.com/user-attachments/assets/63940e93-dfb1-4e2f-9d05-2d84676b1bff" />
+
 
 ### Result:
+Thus, Link Analysis using HITS Algorithm in Python is successfully implemented.
